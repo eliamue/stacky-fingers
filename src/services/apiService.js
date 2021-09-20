@@ -13,17 +13,17 @@ export const fetchOneResource = async (resourceId) => {
 
   return {
     id,
-    src_name,
+    name: src_name,
     category,
-    src_description,
-    st_address,
+    description: src_description,
+    address: st_address,
     city,
-    us_state,
+    state: us_state,
     zip,
     phone,
-    text_num,
+    text: text_num,
     website,
     email,
-    is_24_7
+    is247: is_24_7
   };
 };
