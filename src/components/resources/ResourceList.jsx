@@ -2,7 +2,7 @@ import React from 'react';
 import Resource from './Resource';
 import { Link } from 'react-router-dom';
 import { useManyResources } from '../../hooks/useManyResources';
-import styles from '../../styles/List.css';
+import styles from '../styles/List.css';
 
 const spinner =
   'https://i.redd.it/o6m7b0l6h6pz.gif';

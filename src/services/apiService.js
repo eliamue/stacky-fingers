@@ -1,5 +1,5 @@
-export const fetchAllResources = async () => {
-  const res = await fetch('https://salty-forest-33057.herokuapp.com/');
+export const fetchManyResources = async () => {
+  const res = await fetch('https://salty-forest-33057.herokuapp.com/api/v1/resources');
 
   const { results } = await res.json();
 
@@ -7,7 +7,7 @@ export const fetchAllResources = async () => {
 };
 
 export const fetchOneResource = async (resourceId) => {
-  const res = await fetch(`https://salty-forest-33057.herokuapp.com/${resourceId}`);
+  const res = await fetch(`https://salty-forest-33057.herokuapp.com/api/v1/reaources/${resourceId}`);
 
   const { id, src_name, category, src_description, st_address, city, us_state, zip, phone, text_num, website, email, is_24_7 } = await res.json();
 

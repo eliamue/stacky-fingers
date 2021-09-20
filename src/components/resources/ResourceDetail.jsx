@@ -1,6 +1,6 @@
 import React from 'react';
 import { useOneResource } from '../../hooks/useOneResource';
-import styles from '../../styles/Detail.css';
+import styles from '../styles/Detail.css';
 import { useParams } from 'react-router-dom';
 import Header from '../Header';
 

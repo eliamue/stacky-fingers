@@ -1,5 +1,6 @@
 import React from 'react';
-import { useParams, Link } from 'react-router';
+import { useParams } from 'react-router';
+import Header from '../components/Header';
 import Detail from '../components/resources/ResourceDetail';
 import { useOneResource } from '../hooks/useOneResource';
 
@@ -14,9 +15,7 @@ const resourceDetail = () => {
 
   return (
     <>
-      <Link to="/">
-        <h2>Back to list</h2>
-      </Link>
+      <Header />
       <Detail {...resource} />
     </>
   );
