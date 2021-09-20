@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+export const fetchAllResources = async () => {
+  const res = await fetch('https://salty-forest-33057.herokuapp.com/');
 
-export default class apiService extends Component {
-  render() {
-    return <div></div>;
-  }
-}
+  const { results } = await res.json();
+
+  return results;
+};
