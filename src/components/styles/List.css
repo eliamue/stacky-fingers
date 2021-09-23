@@ -1,3 +1,26 @@
 p {
-    font-size: 13px;
+  font-size: 13px;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+  text-align: center;
+}
+
+.srcdeets, .website, h1, h2, h3, h4, a {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
 }

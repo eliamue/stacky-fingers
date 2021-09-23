@@ -6,7 +6,7 @@ import { useOneResource } from '../../hooks/useOneResource';
 
 const spinner = 'https://i.redd.it/o6m7b0l6h6pz.gif';
 
-const { always } = '*Available 24/7';
+// const always = '*Available 24/7';
 
 const ResourceDetail = () => {
   const { id } = useParams();
@@ -22,40 +22,43 @@ const ResourceDetail = () => {
     phone,
     text,
     website,
-    email,
-    is247,
+    email
   } = resource;
-  if (loading) return <img src={spinner} alt="Loading" />;
-  if (is247)
-    return (
-      always,
-      (
-        <>
-          <Header />
-          <figure className={styles.srcdeets}>
-            <h1>{name}</h1>
-            <h3>{category}</h3>
-            <section className={styles.location}>
-              Location:
-              <p>{address}</p>
-              <p>
-                {city}, {state} {zip}
-              </p>
-            </section>
-            <p className={styles.desc}>{description}</p>
 
-            <section className={styles.contact}>
-              <p>Phone number: {phone}</p>
-              <p>Text number: {text}</p>
-              <a href src={website} alt={name}>
-                Website
-              </a>
-              <p>{email}</p>
-            </section>
-          </figure>
-        </>
-      )
-    );
+  if (loading) return <img src={spinner} alt="Loading" />;
+
+  return (
+    <div>
+      <Header />
+      <div className={styles.srcdeets}>
+
+        <h1>{name}</h1>
+        <h3>Category: {category}</h3>
+        <h4 className={styles.desc}>{description}</h4>
+
+        <section className={styles.location}>
+          <h3>Location</h3>
+          <p>{address}</p>
+          <p>
+            {city}, {state} {zip}
+          </p>
+        </section>
+        
+        <section className={styles.contact}>
+          <h3>Contact</h3>
+          <p>Phone number: {phone}</p>
+          <p>Text number: {text}</p>
+          <p>
+            <a href="true" src={website} alt={name} className={styles.website}>
+              {website}
+            </a>
+          </p>
+          <p>{email}</p>
+        </section>
+
+      </div>
+    </div>
+  );
 };
 
 export default ResourceDetail;
