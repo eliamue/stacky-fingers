@@ -1,14 +1,14 @@
 import React from 'react';
-import { useOneResource } from '../../hooks/useOneResource';
 import styles from '../styles/Detail.css';
 import { useParams } from 'react-router-dom';
 import Header from '../Header';
+import { useOneResource } from '../../hooks/useOneResource';
 
 const spinner = 'https://i.redd.it/o6m7b0l6h6pz.gif';
 
 const { always } = '*Available 24/7';
 
-const Detail = () => {
+const ResourceDetail = () => {
   const { id } = useParams();
   const { loading, resource } = useOneResource(id);
   const {
@@ -36,7 +36,6 @@ const Detail = () => {
             <h1>{name}</h1>
             <h3>{category}</h3>
             <section className={styles.location}>
-              {' '}
               Location:
               <p>{address}</p>
               <p>
@@ -59,4 +58,4 @@ const Detail = () => {
     );
 };
 
-export default Detail;
+export default ResourceDetail;

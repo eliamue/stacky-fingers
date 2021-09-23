@@ -1,20 +1,32 @@
-import React from 'react';
-import { useManyResources } from '../hooks/useManyResources';
-import List from '../components/resources/ResourceList';
+import React, { useEffect, useState } from 'react';
+import ResourceList from '../components/resources/ResourceList';
+import { fetchManyResources } from '../services/apiService';
 
-const spinner =
-  'https://i.redd.it/o6m7b0l6h6pz.gif';
+const spinner = 'https://i.redd.it/o6m7b0l6h6pz.gif';
 
-const resourcesList = () => {
-  const { loading, resources } = useManyResources();
+const ResourcesContainer = () => {
+  const [loading, setLoading] = useState(true);
+  const [resources, setResources] = useState([]);
+
+  useEffect(() => {
+    const loadResources = async () => {
+      const resourcesFromApi = await fetchManyResources();
+      setResources(resourcesFromApi);
+      setLoading(false);
+    };
+    loadResources();
+  });
 
   if(loading) return <img src={spinner} alt="Loading" />;
 
   return (
     <>
-      <List resources={resources} />
+
+      <ResourceList 
+        resources={resources}
+      />
     </>
   );
 };
 
-export default resourcesList;
+export default ResourcesContainer;
