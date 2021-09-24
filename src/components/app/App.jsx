@@ -20,7 +20,6 @@ export default function App() {
         <Route exact path="/">
           <ResourceList />
         </Route>
-        <div>Hello World</div>
       </Switch>
     </Router>
   );

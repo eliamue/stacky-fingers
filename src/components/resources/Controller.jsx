@@ -183,7 +183,7 @@ const CrudController = () => {
             <option value="unknown">Unknown</option>
           </select>
         </label>
-        <button>Submit</button>
+        <button onClick={() => {location.replace('/');}}>Submit</button>
       </form>
     </>
   );

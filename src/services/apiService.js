@@ -130,16 +130,8 @@ export const updateResource = async (resourceId) => {
   return res.json();
 };
 
-export const deleteResource = async (resourceId) => {
-  const res = await fetch(
-    `https://salty-forest-33057.herokuapp.com/api/v1/resources/${resourceId}`,
-    {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(res),
-    }
-  );
-  return res.json();
+export const deleteResource = (id) => {
+  return fetch(
+    `https://salty-forest-33057.herokuapp.com/api/v1/resources/${id}`, { method: 'DELETE' })
+    .then((res) => res.json());
 };

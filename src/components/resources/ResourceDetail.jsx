@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from '../styles/Detail.css';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { useOneResource } from '../../hooks/useOneResource';
+import { deleteResource } from '../../services/apiService';
+
 
 const spinner = 'https://i.redd.it/o6m7b0l6h6pz.gif';
 
@@ -10,6 +12,7 @@ const spinner = 'https://i.redd.it/o6m7b0l6h6pz.gif';
 const ResourceDetail = () => {
   const { id } = useParams();
   const { loading, resource } = useOneResource(id);
+  let history = useHistory();
   const {
     src_name,
     category,
@@ -24,6 +27,15 @@ const ResourceDetail = () => {
     email,
     is_24_7,
   } = resource;
+
+  function handleDelete() {
+    deleteResource(id);
+    history.push('/');
+  }
+
+  function handleEdit() {
+    history.push(`/edit/${id}`);
+  }
 
   if (loading) return <img src={spinner} alt="Loading" />;
 
@@ -54,6 +66,11 @@ const ResourceDetail = () => {
         </p>
         <p>{email}</p>
         <p>Available 24/7? {is_24_7}</p>
+      </section>
+
+      <section>
+        <button onClick={handleDelete}>Delete Resource</button>
+        <button onClick={handleEdit}>Edit Resource</button>
       </section>
     </div>
   );
