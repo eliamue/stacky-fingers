@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import { fetchManyResources } from '../services/apiService';
+import { updateResource } from '../services/apiService';
 
-export const useManyResources = () => {
+export const useUpdate = () => {
   const [loading, setLoading] = useState(true);
   const [resources, setResources] = useState([]);
 
   useEffect(() => {
-    fetchManyResources()
+    updateResource()
       .then((res) => setResources(res))
       .finally(() => setLoading(false));
   });

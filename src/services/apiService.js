@@ -30,7 +30,6 @@ export const fetchOneResource = async (resourceId) => {
     const res = await fetch(
       `https://salty-forest-33057.herokuapp.com/api/v1/resources/${resourceId}`
     );
-
     const {
       id,
       src_name,
@@ -67,3 +66,44 @@ export const fetchOneResource = async (resourceId) => {
   }
 };
 
+export const createResource = async (resourceId) => {
+  const res = await fetch(
+    `https://salty-forest-33057.herokuapp.com/api/v1/resources/${resourceId}`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(res),
+    }
+  );
+  return res.json();
+};
+
+export const updateResource = async (resourceId) => {
+  const res = await fetch(
+    `https://salty-forest-33057.herokuapp.com/api/v1/resources/${resourceId}`,
+    {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(res),
+    }
+  );
+  return res.json();
+};
+
+export const deleteResource = async (resourceId) => {
+  const res = await fetch(
+    `https://salty-forest-33057.herokuapp.com/api/v1/resources/${resourceId}`,
+    {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(res),
+    }
+  );
+  return res.json();
+};

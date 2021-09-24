@@ -16,6 +16,7 @@ const ResourcesContainer = () => {
     };
     loadResources();
   });
+  
 
   if(loading) return <img src={spinner} alt="Loading" />;
 

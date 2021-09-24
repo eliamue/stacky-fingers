@@ -3,6 +3,7 @@ import styles from '../styles/Detail.css';
 import { useParams } from 'react-router-dom';
 import Header from '../Header';
 import { useOneResource } from '../../hooks/useOneResource';
+import Controls from './Controls';
 
 const spinner = 'https://i.redd.it/o6m7b0l6h6pz.gif';
 
@@ -30,10 +31,13 @@ const ResourceDetail = () => {
   return (
     <div>
       <Header />
+
       <div className={styles.srcdeets}>
 
         <h1>{name}</h1>
+
         <h3>Category: {category}</h3>
+
         <h4 className={styles.desc}>{description}</h4>
 
         <section className={styles.location}>
@@ -57,6 +61,7 @@ const ResourceDetail = () => {
         </section>
 
       </div>
+      <Controls />
     </div>
   );
 };

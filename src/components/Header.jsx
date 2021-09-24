@@ -8,6 +8,7 @@ export default class Header extends Component {
       <div className={styles.nav}>
         <header>
           <Link to="/">Back to List</Link>
+          <Link to="/edit">Edit Resource</Link>
         </header>
       </div>
     );

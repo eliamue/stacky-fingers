@@ -1,8 +1,12 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import { render, screen } from '@testing-library/react';
+// import App from './App';
 
 describe('App', () => {
-  const { container } = render(<App />);
-  expect(container).not.toBeEmptyDOMElement();
+  it('renders app', () => {
+    render(<div>Hello World</div>);
+
+    const app = screen.getByText('Hello World');
+    expect(app).not.toBeEmptyDOMElement();
+  });
 });
