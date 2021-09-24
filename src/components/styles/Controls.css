@@ -1,3 +1,30 @@
 input {
     text-align: center;
+    padding: 5px;
+    margin: 5px;
+    width: 40vmin;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: purple;
+    margin-bottom: 0;
+    padding: 5px;
+    margin: 5px;
+}
+
+.add {
+    background-color: blue;
+}
+
+textarea {
+    height: 200px;
+    width: 40vmin;
+}
+
+label {
+    margin: 5px;
+    padding: 5px;
 }

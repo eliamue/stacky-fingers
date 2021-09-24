@@ -7,6 +7,7 @@ export const useCreate = () => {
 
   useEffect(() => {
     createResource()
+      .push((res) => setResources(res))
       .then((res) => setResources(res))
       .finally(() => setLoading(false));
   });

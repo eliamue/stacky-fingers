@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../styles/Detail.css';
 import { useParams } from 'react-router-dom';
 import Header from '../Header';
 import { useOneResource } from '../../hooks/useOneResource';
-import Controls from './Controls';
+
 
 const spinner = 'https://i.redd.it/o6m7b0l6h6pz.gif';
 
@@ -26,6 +26,15 @@ const ResourceDetail = () => {
     email
   } = resource;
 
+  const handleNameChange = async (event) => {
+    useState({ name: event.target.value });
+  };
+
+  const handleSubmit = async (id) => {
+    const [resource] = useState([]);
+    await useOneResource(id, { name: resource.name });
+  };
+
   if (loading) return <img src={spinner} alt="Loading" />;
 
   return (
@@ -35,7 +44,10 @@ const ResourceDetail = () => {
       <div className={styles.srcdeets}>
 
         <h1>{name}</h1>
-
+        <form onSubmit={handleSubmit}>
+          <input placeHolder={name} value={state.name} onChange={handleNameChange} />
+          <button>Submit</button>
+        </form>
         <h3>Category: {category}</h3>
 
         <h4 className={styles.desc}>{description}</h4>
@@ -59,9 +71,7 @@ const ResourceDetail = () => {
           </p>
           <p>{email}</p>
         </section>
-
       </div>
-      <Controls />
     </div>
   );
 };

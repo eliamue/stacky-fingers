@@ -68,7 +68,7 @@ export const fetchOneResource = async (resourceId) => {
 
 export const createResource = async (resourceId) => {
   const res = await fetch(
-    `https://salty-forest-33057.herokuapp.com/api/v1/resources/${resourceId}`,
+    `https://salty-forest-33057.herokuapp.com/api/v1/resources/add/${resourceId}`,
     {
       method: 'POST',
       headers: {
@@ -82,7 +82,7 @@ export const createResource = async (resourceId) => {
 
 export const updateResource = async (resourceId) => {
   const res = await fetch(
-    `https://salty-forest-33057.herokuapp.com/api/v1/resources/${resourceId}`,
+    `https://salty-forest-33057.herokuapp.com/api/v1/resources/edit/${resourceId}`,
     {
       method: 'PUT',
       headers: {

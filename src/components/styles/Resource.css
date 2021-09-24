@@ -1,3 +1,5 @@
-* {
+body {
     background-color: rgb(111, 159, 198);
+    height: 100%;
+    width: 100%;
 }
