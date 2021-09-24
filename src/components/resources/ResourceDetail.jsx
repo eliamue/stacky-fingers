@@ -12,7 +12,7 @@ const spinner = 'https://i.redd.it/o6m7b0l6h6pz.gif';
 const ResourceDetail = () => {
   const { id } = useParams();
   const { loading, resource } = useOneResource(id);
-  let history = useHistory();
+  const history = useHistory();
   const {
     src_name,
     category,

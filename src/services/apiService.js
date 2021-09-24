@@ -94,7 +94,7 @@ export const createResource = async (data) => {
       email,
       is_24_7,
     } = await res.json();
-    console.log('--------', res);
+
     return ({
       id,
       src_name,
@@ -116,15 +116,15 @@ export const createResource = async (data) => {
   }
 };
 
-export const updateResource = async (resourceId) => {
+export const updateResource = async (id, updatedResource) => {
   const res = await fetch(
-    `https://salty-forest-33057.herokuapp.com/api/v1/resources/edit/${resourceId}`,
+    `https://salty-forest-33057.herokuapp.com/api/v1/resources/${id}`,
     {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(res),
+      body: JSON.stringify(updatedResource),
     }
   );
   return res.json();
