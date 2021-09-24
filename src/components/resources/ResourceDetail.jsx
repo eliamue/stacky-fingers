@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from '../styles/Detail.css';
 import { useParams } from 'react-router-dom';
-import Header from '../Header';
 import { useOneResource } from '../../hooks/useOneResource';
-
 
 const spinner = 'https://i.redd.it/o6m7b0l6h6pz.gif';
 
@@ -18,60 +16,45 @@ const ResourceDetail = () => {
     description,
     address,
     city,
-    state,
+    us_state,
     zip,
     phone,
     text,
     website,
-    email
+    email,
+    is247,
   } = resource;
-
-  const handleNameChange = async (event) => {
-    useState({ name: event.target.value });
-  };
-
-  const handleSubmit = async (id) => {
-    const [resource] = useState([]);
-    await useOneResource(id, { name: resource.name });
-  };
 
   if (loading) return <img src={spinner} alt="Loading" />;
 
   return (
-    <div>
-      <Header />
+    <div className={styles.srcdeets}>
+      <h1>{name}</h1>
 
-      <div className={styles.srcdeets}>
+      <h3>Category: {category}</h3>
 
-        <h1>{name}</h1>
-        <form onSubmit={handleSubmit}>
-          <input placeHolder={name} value={state.name} onChange={handleNameChange} />
-          <button>Submit</button>
-        </form>
-        <h3>Category: {category}</h3>
+      <h4 className={styles.desc}>{description}</h4>
 
-        <h4 className={styles.desc}>{description}</h4>
+      <section className={styles.location}>
+        <h3>Location</h3>
+        <p>{address}</p>
+        <p>
+          {city}, {us_state} {zip}
+        </p>
+      </section>
 
-        <section className={styles.location}>
-          <h3>Location</h3>
-          <p>{address}</p>
-          <p>
-            {city}, {state} {zip}
-          </p>
-        </section>
-        
-        <section className={styles.contact}>
-          <h3>Contact</h3>
-          <p>Phone number: {phone}</p>
-          <p>Text number: {text}</p>
-          <p>
-            <a href="true" src={website} alt={name} className={styles.website}>
-              {website}
-            </a>
-          </p>
-          <p>{email}</p>
-        </section>
-      </div>
+      <section className={styles.contact}>
+        <h3>Contact</h3>
+        <p>Phone number: {phone}</p>
+        <p>Text number: {text}</p>
+        <p>
+          <a href="true" src={website} alt={name} className={styles.website}>
+            {website}
+          </a>
+        </p>
+        <p>{email}</p>
+        <p>Available 24/7? {is247}</p>
+      </section>
     </div>
   );
 };

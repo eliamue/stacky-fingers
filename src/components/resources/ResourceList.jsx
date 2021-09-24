@@ -1,6 +1,5 @@
 import React from 'react';
 import Resource from './Resource';
-import { Link } from 'react-router-dom';
 import { useManyResources } from '../../hooks/useManyResources';
 import styles from '../styles/List.css';
 
@@ -15,9 +14,7 @@ const List = () => {
     <ul aria-label="srclist" className={styles.list}>
       {resources.map((resource) => (
         <li key={resource.id}>
-          <Link to={`/${resource.id}`}>
-            <Resource {...resource} />
-          </Link>
+          <Resource {...resource} />
         </li>
       ))}
     </ul>

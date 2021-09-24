@@ -9,7 +9,7 @@ export const useManyResources = () => {
     fetchManyResources()
       .then((res) => setResources(res))
       .finally(() => setLoading(false));
-  });
+  }, []);
 
   return { loading, resources };
 };

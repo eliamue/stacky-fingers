@@ -12,7 +12,7 @@ export const fetchManyResources = async () => {
       description: resource.src_description,
       address: resource.st_address,
       city: resource.city,
-      state: resource.us_state,
+      us_state: resource.us_state,
       zip: resource.zip,
       phone: resource.phone,
       text: resource.text_num,
@@ -53,7 +53,7 @@ export const fetchOneResource = async (resourceId) => {
       description: src_description,
       address: st_address,
       city,
-      state: us_state,
+      us_state,
       zip,
       phone,
       text: text_num,
@@ -66,18 +66,53 @@ export const fetchOneResource = async (resourceId) => {
   }
 };
 
-export const createResource = async (resourceId) => {
-  const res = await fetch(
-    `https://salty-forest-33057.herokuapp.com/api/v1/resources/add/${resourceId}`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(res),
-    }
-  );
-  return res.json();
+export const createResource = async () => {
+  try {
+    const res = await fetch(
+      'https://salty-forest-33057.herokuapp.com/api/v1/resources/',
+      {
+        method: 'POST',
+        body: JSON.stringify(res),
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json',
+        },
+      }).then((res) => res.json());
+
+    const {
+      id,
+      src_name,
+      category,
+      src_description,
+      st_address,
+      city,
+      us_state,
+      zip,
+      phone,
+      text_num,
+      website,
+      email,
+      is_24_7,
+    } = await res.json();
+
+    return {
+      id,
+      name: src_name,
+      category,
+      description: src_description,
+      address: st_address,
+      city,
+      us_state,
+      zip,
+      phone,
+      text: text_num,
+      website,
+      email,
+      is247: is_24_7,
+    };
+  } catch (error) {
+    console.error('error');
+  }
 };
 
 export const updateResource = async (resourceId) => {

@@ -1,156 +1,212 @@
 import React from 'react';
-import Select from 'react-select';
 import PropTypes from 'prop-types';
-import { useForm, Controller } from 'react-hook-form';
 import { useCreate } from '../../hooks/createResource';
 import { createResource } from '../../services/apiService';
 import styles from '../../components/styles/Controls.css';
-import Header from '../Header';
 
-const CrudController = ({ src_name }) => {
-  const { control, handleSubmit, onBlur } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-    useCreate(data);
+const CrudController = () => {
+  const {
+    name,
+    category,
+    description,
+    address,
+    city,
+    us_state,
+    zip,
+    phone,
+    text,
+    website,
+    email,
+    is247,
+    handleName,
+    handleCategory,
+    handleDescription,
+    handleAddress,
+    handleCity,
+    handleZip,
+    handleUsState,
+    handlePhone,
+    handleText,
+    handleEmail,
+    handleWebsite,
+    handleIs247,
+  } = useCreate();
+
+  // const onSubmit = (data) => {
+  //   console.log(data);
+  //   useCreate(data);
+  // };
+
+  const handleSubmit = () => {
+    const data = {
+      name,
+      category,
+      description,
+      address,
+      city,
+      us_state,
+      zip,
+      phone,
+      text,
+      website,
+      email,
+      is247,
+    };
+    createResource(data);
   };
 
   return (
     <>
-      <Header />
       <h1>Add Resource</h1>
-      <form
-        className={styles.add}
-        ref={createResource}
-        onSubmit={handleSubmit(onSubmit)}>
-        <label>Name of Resource: </label>
-        <Controller
-          name="Name"
-          ref={src_name}
-          control={control}
-          defaultValue=""
-          rules={{ required: true }}
-          render={({ field }) => <input 
-            placeHolder={'Company Inc.'} 
-            onBlur={onBlur} {...field} />}
-        />
-        <label>Category: </label>
-        <Controller
-          name="category"
-          control={control}
-          rules={{ required: true }}
-          render={({ field }) => (
-            <Select
-              {...field}
-              options={[
-                { value: 'crisis', label: 'Crisis' },
-                { value: 'mentalhealth', label: 'Mental Health' },
-                { value: 'animals', label: 'Animals' },
-                { value: 'substances', label: 'Substances' },
-                { value: 'crime', label: 'Crime' },
-                { value: 'domestic', label: 'Domestic' },
-              ]}
-            />
-          )}
-        />
-        <label>Brief Description of Resource: </label>
-        <Controller
-          name="Description"
-          control={control}
-          defaultValue=""
-          rules={{ required: true }}
-          render={({ field }) => <textarea placeHolder={'Description of resource with services offered and population served'} {...field} />}
-        />
-        <label>Street Address: </label>
-        <Controller
-          name="Address"
-          className={styles.st}
-          control={control}
-          defaultValue=""
-          rules={{ required: false }}
-          render={({ field }) => <input placeHolder={'123 Main St, #2'} {...field} />}
-        />
-        <label>City: </label>
-        <Controller
-          name="City"
-          control={control}
-          defaultValue=""
-          rules={{ required: false }}
-          render={({ field }) => <input placeHolder={'Anytown'} {...field} />}
-        />
-        <label>State: </label>
-        <Controller
-          name="State"
-          control={control}
-          defaultValue=""
-          rules={{ required: true }}
-          render={({ field }) => <input placeHolder={'MN'} {...field} />}
-        />
-        <label>Zipcode: </label>
-        <Controller
-          name="Zipcode"
-          control={control}
-          defaultValue=""
-          rules={{ required: false }}
-          render={({ field }) => <input placeHolder={'12345'} {...field} />}
-        />
-        <label>Phone Number: </label>
-        <Controller
-          name="Phone"
-          control={control}
-          defaultValue=""
-          rules={{ required: true }}
-          render={({ field }) => <input placeHolder={'1-800-123-4567'} {...field} />}
-        />
-        <label>Text Number: </label>
-        <Controller
-          name="Text"
-          control={control}
-          defaultValue=""
-          rules={{ required: false }}
-          render={({ field }) => <input placeHolder={'(612) 555-1234'} {...field} />}
-        />
-        <label>Website: </label>
-        <Controller
-          name="Website"
-          control={control}
-          defaultValue=""
-          rules={{ required: false }}
-          render={({ field }) => <input placeHolder={'https://www.companywebsite.org'} {...field} />}
-        />
-        <label>Email Address: </label>
-        <Controller
-          name="Email"
-          control={control}
-          defaultValue=""
-          rules={{ required: false }}
-          render={({ field }) => <input placeHolder={'contact@company.org'} {...field} />}
-        />
-        <label>Is Available 24/7: </label>
-        <Controller
-          name="is247"
-          control={control}
-          rules={{ required: false }}
-          render={({ field }) => (
-            <Select
-              {...field}
-              options={[
-                { value: 'true', label: 'Yes' },
-                { value: 'false', label: 'No' },
-                { value: 'unknown', label: 'Unknown' },
-              ]}
-            />
-          )}
-        />
-        
+      <form className={styles.add} onSubmit={handleSubmit}>
+        <label>
+          Name of Resource:
+          <input
+            name="name"
+            onChange={handleName}
+            placeholder="Company Inc."
+            value={name}
+          />
+        </label>
+        <label>
+          Category:
+          <select
+            name="category"
+            onChange={handleCategory}
+            value={category}
+          >
+            <option value="crisis" label="Crisis"></option>
+            <option value="mentalhealth" label="Mental Health"></option>
+            <option value="animals" label="Animals"></option>
+            <option value="substances" label="Substances"></option>
+            <option value="crime" label="Crime"></option>
+            <option value="domestic" label="Domestic"></option>
+          </select>
+        </label>
 
-        <input type="submit" />
+        <label>
+          Brief Description of Resource:
+          <textarea
+            name="description"
+            onChange={handleDescription}
+            value={description}
+            placeholder="Description of resource with services offered and population served"
+          />
+        </label>
+
+        <label>
+          Street Address:
+          <input
+            name="address"
+            className={styles.st}
+            onChange={handleAddress}
+            value={address}
+            placeholder="123 Main St, #2"
+          />
+        </label>
+
+        <label>
+          City:
+          <input
+            name="City"
+            onChange={handleCity}
+            value={city}
+            placeholder="Anytown"
+          />
+        </label>
+
+        <label>
+          State:
+          <input
+            name="us_state"
+            onChange={handleUsState}
+            value={us_state}
+            placeholder="MN"
+          />
+        </label>
+
+        <label>
+          Zipcode:
+          <input
+            name="zip"
+            onChange={handleZip}
+            value={zip}
+            placeholder="12345"
+          />
+        </label>
+
+        <label>
+          Phone Number:
+          <input
+            name="phone"
+            onChange={handlePhone}
+            value={phone}
+            placeholder="1-800-123-4567"
+          />
+        </label>
+
+        <label>
+          Text Number:
+          <input
+            name="text"
+            onChange={handleText}
+            value={text}
+            placeholder="(612) 555-1234"
+          />
+        </label>
+
+        <label>
+          Website:
+          <input
+            name="website"
+            onChange={handleWebsite}
+            value={website}
+            placeholder="https://www.companywebsite.org"
+          />
+        </label>
+
+        <label>
+          Email Address:
+          <input
+            name="email"
+            onChange={handleEmail}
+            value={email}
+            placeholder="contact@company.org"
+          />
+        </label>
+
+        <label>
+          Is Available 24/7:
+          <select
+            name="is247"
+            onChange={handleIs247}
+            value={is247}
+          >
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+            <option value="unknown">Unknown</option>
+          </select>
+        </label>
+        <button onClick={() => {
+          window.redirect('/');}}>Submit</button>
       </form>
     </>
   );
 };
 
 CrudController.propTypes = {
-  src_name: PropTypes.string
+  name: PropTypes.string,
+  category: PropTypes.string,
+  description: PropTypes.string,
+  address: PropTypes.string,
+  city: PropTypes.string,
+  us_state: PropTypes.string,
+  zip: PropTypes.string,
+  phone: PropTypes.string,
+  text: PropTypes.string,
+  website: PropTypes.string,
+  email: PropTypes.string,
+  is247: PropTypes.string,
 };
 
 export default CrudController;

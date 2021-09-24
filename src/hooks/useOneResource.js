@@ -7,7 +7,7 @@ export const useOneResource = (id) => {
 
   useEffect(() => {
     fetchOneResource(id)
-      .then(setResource)
+      .then(res => setResource(res))
       .finally(() => setLoading(false));
   }, [id]);
 
