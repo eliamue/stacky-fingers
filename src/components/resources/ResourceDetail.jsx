@@ -11,33 +11,33 @@ const ResourceDetail = () => {
   const { id } = useParams();
   const { loading, resource } = useOneResource(id);
   const {
-    name,
+    src_name,
     category,
-    description,
-    address,
+    src_description,
+    st_address,
     city,
     us_state,
     zip,
     phone,
-    text,
+    text_num,
     website,
     email,
-    is247,
+    is_24_7,
   } = resource;
 
   if (loading) return <img src={spinner} alt="Loading" />;
 
   return (
     <div className={styles.srcdeets}>
-      <h1>{name}</h1>
+      <h1>{src_name}</h1>
 
       <h3>Category: {category}</h3>
 
-      <h4 className={styles.desc}>{description}</h4>
+      <h4 className={styles.desc}>{src_description}</h4>
 
       <section className={styles.location}>
         <h3>Location</h3>
-        <p>{address}</p>
+        <p>{st_address}</p>
         <p>
           {city}, {us_state} {zip}
         </p>
@@ -46,14 +46,14 @@ const ResourceDetail = () => {
       <section className={styles.contact}>
         <h3>Contact</h3>
         <p>Phone number: {phone}</p>
-        <p>Text number: {text}</p>
+        <p>Text number: {text_num}</p>
         <p>
-          <a href="true" src={website} alt={name} className={styles.website}>
+          <a href="true" src={website} alt={src_name} className={styles.website}>
             {website}
           </a>
         </p>
         <p>{email}</p>
-        <p>Available 24/7? {is247}</p>
+        <p>Available 24/7? {is_24_7}</p>
       </section>
     </div>
   );

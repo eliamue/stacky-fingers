@@ -6,18 +6,18 @@ import styles from '../../components/styles/Controls.css';
 
 const CrudController = () => {
   const {
-    name,
+    src_name,
     category,
-    description,
-    address,
+    src_description,
+    st_address,
     city,
     us_state,
     zip,
     phone,
-    text,
+    text_num,
     website,
     email,
-    is247,
+    is_24_7,
     handleName,
     handleCategory,
     handleDescription,
@@ -32,27 +32,23 @@ const CrudController = () => {
     handleIs247,
   } = useCreate();
 
-  // const onSubmit = (data) => {
-  //   console.log(data);
-  //   useCreate(data);
-  // };
-
-  const handleSubmit = () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     const data = {
-      name,
+      src_name,
       category,
-      description,
-      address,
+      src_description,
+      st_address,
       city,
       us_state,
       zip,
       phone,
-      text,
+      text_num,
       website,
       email,
-      is247,
+      is_24_7,
     };
-    createResource(data);
+    await createResource(data);
   };
 
   return (
@@ -62,10 +58,10 @@ const CrudController = () => {
         <label>
           Name of Resource:
           <input
-            name="name"
+            name="src_name"
             onChange={handleName}
             placeholder="Company Inc."
-            value={name}
+            value={src_name}
           />
         </label>
         <label>
@@ -87,9 +83,9 @@ const CrudController = () => {
         <label>
           Brief Description of Resource:
           <textarea
-            name="description"
+            name="src_description"
             onChange={handleDescription}
-            value={description}
+            value={src_description}
             placeholder="Description of resource with services offered and population served"
           />
         </label>
@@ -97,10 +93,10 @@ const CrudController = () => {
         <label>
           Street Address:
           <input
-            name="address"
+            name="st_address"
             className={styles.st}
             onChange={handleAddress}
-            value={address}
+            value={st_address}
             placeholder="123 Main St, #2"
           />
         </label>
@@ -148,9 +144,9 @@ const CrudController = () => {
         <label>
           Text Number:
           <input
-            name="text"
+            name="text_num"
             onChange={handleText}
-            value={text}
+            value={text_num}
             placeholder="(612) 555-1234"
           />
         </label>
@@ -178,35 +174,34 @@ const CrudController = () => {
         <label>
           Is Available 24/7:
           <select
-            name="is247"
+            name="is_24_7"
             onChange={handleIs247}
-            value={is247}
+            value={is_24_7}
           >
             <option value="true">Yes</option>
             <option value="false">No</option>
             <option value="unknown">Unknown</option>
           </select>
         </label>
-        <button onClick={() => {
-          window.redirect('/');}}>Submit</button>
+        <button>Submit</button>
       </form>
     </>
   );
 };
 
 CrudController.propTypes = {
-  name: PropTypes.string,
+  src_name: PropTypes.string,
   category: PropTypes.string,
-  description: PropTypes.string,
-  address: PropTypes.string,
+  src_description: PropTypes.string,
+  st_address: PropTypes.string,
   city: PropTypes.string,
   us_state: PropTypes.string,
   zip: PropTypes.string,
   phone: PropTypes.string,
-  text: PropTypes.string,
+  text_num: PropTypes.string,
   website: PropTypes.string,
   email: PropTypes.string,
-  is247: PropTypes.string,
+  is_24_7: PropTypes.string,
 };
 
 export default CrudController;

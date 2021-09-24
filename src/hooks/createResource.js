@@ -1,18 +1,18 @@
 import { useState } from 'react';
 
 export const useCreate = () => {
-  const [name, setName] = useState('');
+  const [src_name, setName] = useState('');
   const [category, setCategory] = useState('');
-  const [description, setDescription] = useState('');
-  const [address, setAddress] = useState('');
+  const [src_description, setDescription] = useState('');
+  const [st_address, setAddress] = useState('');
   const [city, setCity] = useState('');
   const [zip, setZip] = useState('');
   const [us_state, setUsState] = useState('');
   const [phone, setPhone] = useState('');
-  const [text, setText] = useState('');
+  const [text_num, setText] = useState('');
   const [website, setWebsite] = useState('');
   const [email, setEmail] = useState('');
-  const [is247, setIs247] = useState('');
+  const [is_24_7, setIs247] = useState('');
 
   const handleName = ({ target }) => {
     setName(target.value);
@@ -63,18 +63,18 @@ export const useCreate = () => {
   };
 
   return {
-    name,
+    src_name,
     category,
-    description,
-    address,
+    src_description,
+    st_address,
     city,
     us_state,
     zip,
     phone,
-    text,
+    text_num,
     website,
     email,
-    is247,
+    is_24_7,
     handleName,
     handleCategory,
     handleDescription,
