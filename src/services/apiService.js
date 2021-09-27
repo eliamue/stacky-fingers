@@ -69,7 +69,7 @@ export const fetchOneResource = async (resourceId) => {
 export const createResource = async (data) => {
   try {
     const res = await fetch(
-      'http://localhost:7890/api/v1/resources',
+      'http://salty-forest-33057.herokuapp.com/api/v1/resources',
       {
         method: 'POST',
         body: JSON.stringify(data),
@@ -77,7 +77,8 @@ export const createResource = async (data) => {
           'Access-Control-Allow-Origin': '*',
           'Content-Type': 'application/json',
         },
-      });
+      }
+    );
 
     const {
       id,
