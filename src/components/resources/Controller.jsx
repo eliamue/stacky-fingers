@@ -71,12 +71,12 @@ const CrudController = () => {
             onChange={handleCategory}
             value={category}
           >
-            <option value="crisis" label="Crisis"></option>
-            <option value="mentalhealth" label="Mental Health"></option>
-            <option value="animals" label="Animals"></option>
-            <option value="substances" label="Substances"></option>
-            <option value="crime" label="Crime"></option>
-            <option value="domestic" label="Domestic"></option>
+            <option value="Crisis" label="Crisis"></option>
+            <option value="Mental Health" label="Mental Health"></option>
+            <option value="Animal" label="Animal"></option>
+            <option value="Substances" label="Substances"></option>
+            <option value="Crime" label="Crime"></option>
+            <option value="Domestic" label="Domestic"></option>
           </select>
         </label>
 
