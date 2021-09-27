@@ -69,7 +69,7 @@ export const fetchOneResource = async (resourceId) => {
 export const createResource = async (data) => {
   try {
     const res = await fetch(
-      'http://salty-forest-33057.herokuapp.com/api/v1/resources',
+      'https://salty-forest-33057.herokuapp.com/api/v1/resources',
       {
         method: 'POST',
         body: JSON.stringify(data),
