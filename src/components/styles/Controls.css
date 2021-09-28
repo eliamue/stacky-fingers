@@ -26,6 +26,8 @@ textarea {
 }
 
 label {
+    display: flex;
+    flex-direction: row;
     margin: 5px;
     padding: 5px;
     font-size: 20px;
@@ -33,4 +35,13 @@ label {
 
 ::placeholder {
     color: black;
+}
+
+.req {
+    color: red;
+}
+
+.instruction {
+    display: flex;
+    flex-direction: row;
 }

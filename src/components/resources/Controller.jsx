@@ -53,9 +53,13 @@ const CrudController = () => {
   return (
     <>
       <h1>Add Resource</h1>
+      <p className={styles.req}>* Is Required</p>
       <form className={styles.add} onSubmit={handleSubmit}>
         <label>
-          Name of Resource:
+          <div className={styles.instruction}>
+            <h4 className={styles.req}>*</h4>
+            <h4>Name of Resource: </h4>
+          </div>
           <input
             name="src_name"
             onChange={handleName}
@@ -65,7 +69,10 @@ const CrudController = () => {
           />
         </label>
         <label>
-          Category:
+          <div className={styles.instruction}>
+            <h4 className={styles.req}>*</h4>
+            <h4>Category: </h4>
+          </div>
           <select
             name="category"
             onChange={handleCategory}
@@ -83,13 +90,16 @@ const CrudController = () => {
         </label>
 
         <label>
-          Brief Description of Resource:
+          <div className={styles.instruction}>
+            <h4 className={styles.req}>*</h4>
+            <h4>Description: </h4>
+          </div>
           <textarea
             name="src_description"
             onChange={handleDescription}
             value={src_description}
             required
-            placeholder="Description of resource with services offered and population served"
+            placeholder="Description of resource, including services offered and population served"
           />
         </label>
 
@@ -105,7 +115,10 @@ const CrudController = () => {
         </label>
 
         <label>
-          City:
+          <div className={styles.instruction}>
+            <h4 className={styles.req}>*</h4>
+            <h4>City: </h4>
+          </div>
           <input
             name="City"
             onChange={handleCity}
@@ -116,7 +129,10 @@ const CrudController = () => {
         </label>
 
         <label>
-          State:
+          <div className={styles.instruction}>
+            <h4 className={styles.req}>*</h4>
+            <h4>State: </h4>
+          </div>
           <input
             name="us_state"
             onChange={handleUsState}
@@ -137,7 +153,10 @@ const CrudController = () => {
         </label>
 
         <label>
-          Phone Number:
+          <div className={styles.instruction}>
+            <h4 className={styles.req}>*</h4>
+            <h4>Phone Number: </h4>
+          </div>
           <input
             name="phone"
             onChange={handlePhone}
@@ -178,16 +197,16 @@ const CrudController = () => {
         </label>
 
         <label>
-          Is Available 24/7:
+          Is this resource available 24/7:     
           <select
             name="is_24_7"
             onChange={handleIs247}
             value={is_24_7}
           >
             <option value="" selected disabled>--</option>
-            <option value="true">Yes</option>
-            <option value="false">No</option>
-            <option value="unknown">Unknown</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="Unknown">Unknown</option>
           </select>
         </label>
         <button type="submit">Submit</button>
