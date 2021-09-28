@@ -72,7 +72,7 @@ const CrudController = () => {
             value={category}
             required
           >
-            <option value="" selected disabled hidden>--</option>
+            <option value="" selected disabled>--</option>
             <option value="Crisis" label="Crisis"></option>
             <option value="Mental Health" label="Mental Health"></option>
             <option value="Animal" label="Animal"></option>
@@ -184,7 +184,7 @@ const CrudController = () => {
             onChange={handleIs247}
             value={is_24_7}
           >
-            <option value="" selected disabled hidden>--</option>
+            <option value="" selected disabled>--</option>
             <option value="true">Yes</option>
             <option value="false">No</option>
             <option value="unknown">Unknown</option>
