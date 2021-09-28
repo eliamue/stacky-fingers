@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResourceList renders resource list 1`] = `
+<a
+  href="/3"
+>
+  <h2
+    class="srcName"
+  >
+    Tubman Family Crisis and Support Services
+  </h2>
+</a>
+`;
