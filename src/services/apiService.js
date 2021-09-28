@@ -28,7 +28,7 @@ export const fetchManyResources = async () => {
 export const fetchOneResource = async (resourceId) => {
   try {
     const res = await fetch(
-      `https://salty-forest-33057.herokuapp.com/api/v1/resources${resourceId}`
+      `https://salty-forest-33057.herokuapp.com/api/v1/resources/${resourceId}`
     );
     const {
       id,
@@ -119,7 +119,7 @@ export const createResource = async (data) => {
 
 export const updateResource = async (id, updatedResource) => {
   const res = await fetch(
-    `https://salty-forest-33057.herokuapp.com/api/v1/resources${id}`,
+    `https://salty-forest-33057.herokuapp.com/api/v1/resources/${id}`,
     {
       method: 'PUT',
       headers: {
@@ -133,7 +133,7 @@ export const updateResource = async (id, updatedResource) => {
 
 export const deleteResource = (id) => {
   return fetch(
-    `https://salty-forest-33057.herokuapp.com/api/v1/resources${id}`,
+    `https://salty-forest-33057.herokuapp.com/api/v1/resources/${id}`,
     { method: 'DELETE' }
   ).then((res) => res.json());
 };

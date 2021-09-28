@@ -48,6 +48,7 @@ const CrudController = () => {
       is_24_7,
     };
     await createResource(data);
+    history.push('/');
   };
 
   return (
