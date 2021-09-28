@@ -6,10 +6,10 @@ export default class Header extends Component {
   render() {
     return (
       <div className={styles.nav}>
-        <header>
-          <Link to="/">Back to List</Link>
-          <Link to="/add">Add Resource</Link>
-        </header>
+        <nav>
+          <Link to="/"><h1 className={styles.title}>Emergency Resources</h1></Link>
+          <Link to="/add" className={styles.add}><h5>Add Resource</h5></Link>
+        </nav>
       </div>
     );
   }
