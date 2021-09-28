@@ -1,7 +1,7 @@
 export const fetchManyResources = async () => {
   try {
     const res = await fetch(
-      'https://salty-forest-33057.herokuapp.com/api/v1/resources'
+      'http://localhost:7890/api/v1/resources'
     );
 
     const resources = await res.json();
@@ -21,14 +21,14 @@ export const fetchManyResources = async () => {
       is_24_7: resource.is_24_7,
     }));
   } catch (error) {
-    console.error('error');
+    console.error(error.message);
   }
 };
 
 export const fetchOneResource = async (resourceId) => {
   try {
     const res = await fetch(
-      `https://salty-forest-33057.herokuapp.com/api/v1/resources/${resourceId}`
+      `http://localhost:7890/api/v1/resources/${resourceId}`
     );
     const {
       id,
@@ -62,14 +62,14 @@ export const fetchOneResource = async (resourceId) => {
       is_24_7,
     };
   } catch (error) {
-    console.error('error');
+    console.error(error.message);
   }
 };
 
 export const createResource = async (data) => {
   try {
     const res = await fetch(
-      'https://salty-forest-33057.herokuapp.com/api/v1/resources',
+      'http://localhost:7890/api/v1/resources',
       {
         method: 'POST',
         body: JSON.stringify(data),
@@ -96,7 +96,7 @@ export const createResource = async (data) => {
       is_24_7,
     } = await res.json();
 
-    return ({
+    return {
       id,
       src_name,
       category,
@@ -110,16 +110,16 @@ export const createResource = async (data) => {
       website,
       email,
       is_24_7,
-    });
+    };
 
   } catch (error) {
-    console.error('error');
+    console.error(error.message);
   }
 };
 
 export const updateResource = async (id, updatedResource) => {
   const res = await fetch(
-    `https://salty-forest-33057.herokuapp.com/api/v1/resources/${id}`,
+    `http://localhost:7890/api/v1/resources/${id}`,
     {
       method: 'PUT',
       headers: {
@@ -133,6 +133,6 @@ export const updateResource = async (id, updatedResource) => {
 
 export const deleteResource = (id) => {
   return fetch(
-    `https://salty-forest-33057.herokuapp.com/api/v1/resources/${id}`, { method: 'DELETE' })
+    `http://localhost:7890/api/v1/resources/${id}`, { method: 'DELETE' })
     .then((res) => res.json());
 };

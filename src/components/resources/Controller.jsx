@@ -32,8 +32,7 @@ const CrudController = () => {
     handleIs247,
   } = useCreate();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async () => {
     const data = {
       src_name,
       category,
@@ -62,6 +61,7 @@ const CrudController = () => {
             onChange={handleName}
             placeholder="Company Inc."
             value={src_name}
+            required
           />
         </label>
         <label>
@@ -70,6 +70,7 @@ const CrudController = () => {
             name="category"
             onChange={handleCategory}
             value={category}
+            required
           >
             <option value="Crisis" label="Crisis"></option>
             <option value="Mental Health" label="Mental Health"></option>
@@ -86,6 +87,7 @@ const CrudController = () => {
             name="src_description"
             onChange={handleDescription}
             value={src_description}
+            required
             placeholder="Description of resource with services offered and population served"
           />
         </label>
@@ -108,6 +110,7 @@ const CrudController = () => {
             onChange={handleCity}
             value={city}
             placeholder="Anytown"
+            required
           />
         </label>
 
@@ -118,6 +121,7 @@ const CrudController = () => {
             onChange={handleUsState}
             value={us_state}
             placeholder="MN"
+            required
           />
         </label>
 
@@ -138,6 +142,7 @@ const CrudController = () => {
             onChange={handlePhone}
             value={phone}
             placeholder="1-800-123-4567"
+            required
           />
         </label>
 
@@ -183,7 +188,7 @@ const CrudController = () => {
             <option value="unknown">Unknown</option>
           </select>
         </label>
-        <button onClick={() => {location.replace('/');}}>Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </>
   );
