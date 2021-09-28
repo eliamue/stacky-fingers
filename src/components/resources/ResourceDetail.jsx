@@ -40,7 +40,7 @@ const ResourceDetail = () => {
   if (loading) return <img src={spinner} alt="Loading" />;
 
   return (
-    <div className={styles.srcdeets}>
+    <div testid={'detail-test'} className={styles.srcdeets}>
       <h1>{src_name}</h1>
 
       <h3>Category: {category}</h3>

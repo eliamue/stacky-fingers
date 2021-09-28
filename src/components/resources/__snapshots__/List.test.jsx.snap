@@ -1,13 +1,274 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ResourceList renders resource list 1`] = `
-<a
-  href="/3"
+<ul
+  aria-label="srclist"
+  class="list"
+  role="list"
 >
-  <h2
-    class="srcName"
-  >
-    Tubman Family Crisis and Support Services
-  </h2>
-</a>
+  <li>
+    <section
+      class="resource"
+    >
+      <a
+        href="/3"
+      >
+        <h2
+          class="srcName"
+        >
+          Tubman Family Crisis and Support Services
+        </h2>
+      </a>
+      <h3
+        class="category"
+      >
+        Category: 
+        Mental Health
+      </h3>
+      <h4
+        class="location"
+      >
+        Minneapolis
+        , 
+        MN
+      </h4>
+      <p
+        class="description"
+      >
+        Tubman helps people of all ages, genders, and cultural backgrounds who have experienced relationship violence, elder abuse, addiction, sexual exploitation or other forms of trauma. Throughout the Twin Cities, Tubman provides safe shelter, legal services, mental and chemical health counseling, youth programming, and community education, including public information campaigns to provide community members the information and support they need to get help or give help.
+      </p>
+    </section>
+  </li>
+  <li>
+    <section
+      class="resource"
+    >
+      <a
+        href="/6"
+      >
+        <h2
+          class="srcName"
+        >
+          Domestic Violence Resource Center
+        </h2>
+      </a>
+      <h3
+        class="category"
+      >
+        Category: 
+        Domestic
+      </h3>
+      <h4
+        class="location"
+      >
+        Reno
+        , 
+        NV
+      </h4>
+      <p
+        class="description"
+      >
+        The Domestic Violence Resource Center provides free, confidential, bilingual services in an effort to bring an end to family violence in Washoe County.
+      </p>
+    </section>
+  </li>
+  <li>
+    <section
+      class="resource"
+    >
+      <a
+        href="/10"
+      >
+        <h2
+          class="srcName"
+        >
+          Burt Macklin, FBI
+        </h2>
+      </a>
+      <h3
+        class="category"
+      >
+        Category: 
+        Crime
+      </h3>
+      <h4
+        class="location"
+      >
+        Pawnee
+        , 
+        IN
+      </h4>
+      <p
+        class="description"
+      >
+        The greatest FBI agent of all time
+      </p>
+    </section>
+  </li>
+  <li>
+    <section
+      class="resource"
+    >
+      <a
+        href="/9"
+      >
+        <h2
+          class="srcName"
+        >
+          Wildlife Rehab Center of Minnesota
+        </h2>
+      </a>
+      <h3
+        class="category"
+      >
+        Category: 
+        Animal
+      </h3>
+      <h4
+        class="location"
+      >
+        Roseville
+        , 
+        MN
+      </h4>
+      <p
+        class="description"
+      >
+        MN WRC cares for the community’s lost, homeless, stray, injured, sick, neglected and abandoned wildlife, treating with the goal of fully rehabilitating and releasing back into their native habitats for their best chance of survival.
+      </p>
+    </section>
+  </li>
+  <li>
+    <section
+      class="resource"
+    >
+      <a
+        href="/7"
+      >
+        <h2
+          class="srcName"
+        >
+          Multnomah County Animal Services
+        </h2>
+      </a>
+      <h3
+        class="category"
+      >
+        Category: 
+        Animal
+      </h3>
+      <h4
+        class="location"
+      >
+        Troutdale
+        , 
+        OR
+      </h4>
+      <p
+        class="description"
+      >
+        Multnomah County Animal Services is the county’s sole public animal shelter and control agency. The mission of MCAS is to protect the health, safety and welfare of people and pets throughout Multnomah County. MCAS cares for the community’s lost, homeless, stray, injured, sick, neglected and abandoned animals.
+      </p>
+    </section>
+  </li>
+  <li>
+    <section
+      class="resource"
+    >
+      <a
+        href="/8"
+      >
+        <h2
+          class="srcName"
+        >
+          St Paul Animal Control Center
+        </h2>
+      </a>
+      <h3
+        class="category"
+      >
+        Category: 
+        Animal
+      </h3>
+      <h4
+        class="location"
+      >
+        St Paul
+        , 
+        MN
+      </h4>
+      <p
+        class="description"
+      >
+        City of St Paul center for animal control.
+      </p>
+    </section>
+  </li>
+  <li>
+    <section
+      class="resource"
+    >
+      <a
+        href="/2"
+      >
+        <h2
+          class="srcName"
+        >
+          Day One Crime Victim Support Line
+        </h2>
+      </a>
+      <h3
+        class="category"
+      >
+        Category: 
+        Crime
+      </h3>
+      <h4
+        class="location"
+      >
+        Bloomington
+        , 
+        MN
+      </h4>
+      <p
+        class="description"
+      >
+        Day One hosts the statewide support line for general crime victims. Help is available to you no matter where you’re located in the state of Minnesota. 24/7 support line.
+      </p>
+    </section>
+  </li>
+  <li>
+    <section
+      class="resource"
+    >
+      <a
+        href="/12"
+      >
+        <h2
+          class="srcName"
+        >
+          Jeep, The Goodest Boi
+        </h2>
+      </a>
+      <h3
+        class="category"
+      >
+        Category: 
+        Animal
+      </h3>
+      <h4
+        class="location"
+      >
+        Portland
+        , 
+        OR
+      </h4>
+      <p
+        class="description"
+      >
+        Jeep need MANY EGG
+      </p>
+    </section>
+  </li>
+</ul>
 `;
