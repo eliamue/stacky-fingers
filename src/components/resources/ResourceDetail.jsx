@@ -40,8 +40,8 @@ const ResourceDetail = () => {
   if (loading) return <img src={spinner} alt="Loading" />;
 
   return (
-    <div testid={'detail-test'} className={styles.srcdeets}>
-      <h1>{src_name}</h1>
+    <div className={styles.srcdeets}>
+      <h1 aria-label="src-name">{src_name}</h1>
 
       <h3>Category: {category}</h3>
 
@@ -69,7 +69,7 @@ const ResourceDetail = () => {
       </section>
 
       <section>
-        <button onClick={handleDelete}>Delete Resource</button>
+        <button name="delete-btn" role="button" onClick={handleDelete}>Delete Resource</button>
         <button onClick={handleEdit}>Edit Resource</button>
       </section>
     </div>

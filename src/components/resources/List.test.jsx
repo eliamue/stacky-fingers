@@ -11,8 +11,6 @@ describe('ResourceList', () => {
     const ul = await screen.findByRole('list');
     expect(ul).toMatchSnapshot();
 
-    
-
     const li = screen.getByRole('link', { name: 'Tubman Family Crisis and Support Services' });
     expect(li).toBeInTheDocument();
   });
