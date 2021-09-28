@@ -1,7 +1,7 @@
 export const fetchManyResources = async () => {
   try {
     const res = await fetch(
-      'http://localhost:7890/api/v1/resources'
+      'https://salty-forest-33057.herokuapp.com/api/v1/resources'
     );
 
     const resources = await res.json();
@@ -28,7 +28,7 @@ export const fetchManyResources = async () => {
 export const fetchOneResource = async (resourceId) => {
   try {
     const res = await fetch(
-      `http://localhost:7890/api/v1/resources/${resourceId}`
+      `https://salty-forest-33057.herokuapp.com/api/v1/resources${resourceId}`
     );
     const {
       id,
@@ -69,7 +69,7 @@ export const fetchOneResource = async (resourceId) => {
 export const createResource = async (data) => {
   try {
     const res = await fetch(
-      'http://localhost:7890/api/v1/resources',
+      'https://salty-forest-33057.herokuapp.com/api/v1/resources',
       {
         method: 'POST',
         body: JSON.stringify(data),
@@ -119,7 +119,7 @@ export const createResource = async (data) => {
 
 export const updateResource = async (id, updatedResource) => {
   const res = await fetch(
-    `http://localhost:7890/api/v1/resources/${id}`,
+    `https://salty-forest-33057.herokuapp.com/api/v1/resources${id}`,
     {
       method: 'PUT',
       headers: {
@@ -133,6 +133,7 @@ export const updateResource = async (id, updatedResource) => {
 
 export const deleteResource = (id) => {
   return fetch(
-    `http://localhost:7890/api/v1/resources/${id}`, { method: 'DELETE' })
-    .then((res) => res.json());
+    `https://salty-forest-33057.herokuapp.com/api/v1/resources${id}`,
+    { method: 'DELETE' }
+  ).then((res) => res.json());
 };
